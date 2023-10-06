@@ -1,0 +1,1 @@
+# strikerdf.com.br
