@@ -11,7 +11,7 @@ export function Header() {
     <header
       className={`fixed top-0 flex items-center justify-between max-w-3/4 w-[98%]
         max-w-5xl items-center justify-between py-3 px-6 mt-10 mx-4 z-50
-        border-[1.5px] border-gray-500 border-opacity-30 rounded-3xl backdrop-blur-[2px] max-[668px]:hidden
+        border-[1.5px] border-gray-50 border-opacity-30 rounded-3xl backdrop-blur-[2px] max-[668px]:hidden
         `}
     >
       <nav className="flex-1 px-2">

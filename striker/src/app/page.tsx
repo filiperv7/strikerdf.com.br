@@ -6,6 +6,22 @@ import eventos3 from '@/public/assets/eventos3.webp'
 import bolicheIcon from '@/public/assets/icon_boliche.png'
 import pistas from '@/public/assets/pistas.webp'
 
+import {
+  faFacebook,
+  faInstagram,
+  faWhatsapp
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarTrigger
+} from '@/components/ui/menubar'
+
 import { Banner } from '@/components/Banner'
 import { Header } from '@/components/Header'
 import { StrikerSection } from '@/components/StrikerSection'
@@ -13,6 +29,7 @@ import { BoxLimitation } from '@/components/common/BoxLimitation'
 import ResponsiveImage from '@/components/common/ResponsiveImage'
 import { Oxanium } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const oxanium = Oxanium({ subsets: ['latin'], weight: ['400', '500', '700'] })
 
@@ -20,6 +37,46 @@ export default function Home() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center">
       <Header />
+      <Menubar className="hidden max-[668px]:inline-block fixed top-4 left-4 z-50 bg-zinc-100">
+        <MenubarMenu>
+          <MenubarTrigger className="bg-zinc-100 text-black font-bold">
+            Menu
+          </MenubarTrigger>
+          <MenubarContent>
+            <MenubarItem className="text-base font-semibold">
+              Início
+            </MenubarItem>
+            <MenubarItem className="text-base font-semibold">
+              Restaurante
+            </MenubarItem>
+            <MenubarItem className="text-base font-semibold">
+              HappyHour
+            </MenubarItem>
+            <MenubarItem className="text-base font-semibold">
+              Eventos
+            </MenubarItem>
+            <MenubarItem className="text-base font-semibold">
+              Contatos
+            </MenubarItem>
+            <MenubarSeparator className="bg-[#EC9B33] h-[2px]" />
+            <MenubarItem className="flex items-center justify-evenly">
+              <Link
+                href={
+                  'https://api.whatsapp.com/send?phone=+55061992003588&text=Ol%C3%A1,venho%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20boliche.'
+                }
+              >
+                <FontAwesomeIcon icon={faWhatsapp} className="w-7" />
+              </Link>
+              <Link href={'https://www.instagram.com/strikerbsb/'}>
+                <FontAwesomeIcon icon={faInstagram} className="w-7" />
+              </Link>
+              <Link href={'https://www.facebook.com/StrikerDF/?locale=pt_BR'}>
+                <FontAwesomeIcon icon={faFacebook} className="w-7" />
+              </Link>
+            </MenubarItem>
+          </MenubarContent>
+        </MenubarMenu>
+      </Menubar>
       <Banner />
       <StrikerSection />
 
